@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./partials/head') %>
+        <title>Add Blog</title>
+    </head>
+    <body>
+        <%- include('./partials/nav') %>
+        <div class="container-sm mt-2">
+            <div class="d-flex justify-content-center">
+                <h1>Publish a blog</h1>
+            </div>
+            <form class="needs-validation" method="post" action="/blog/add" enctype="multipart/form-data" novalidate>
+                <div class="mb-3">
+                    <div class="row mb-3">
+                        <label for="validationTextarea"
+                            class="form-label">Title</label>
+                        <textarea
+                            class="form-control"
+                            id="validationTextarea"
+                            placeholder="Title of your blog"
+                            name="title"
+                            required></textarea>
+                        <div class="invalid-feedback">Please give a title of
+                            your blog</div>
+
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="validationTextarea"
+                            class="form-label">Body</label>
+                        <textarea
+                            class="form-control"
+                            id="validationTextarea"
+                            placeholder="Write about your blog..."
+                            name="body"
+                            required></textarea>
+                        <div class="invalid-feedback">Please write about
+                            your blog.</div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="validationTextarea"
+                            class="form-label">Blog
+                            cover image</label>
+                        <input type="file" class="form-control"
+                            name="blogCoverImage" 
+                            aria-label="file example" />
+                    </div>
+
+                    <div class="d-flex justify-content-center">
+                        <button type="submit"
+                            class="btn btn-primary">Publish</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script>
+      (() => {
+        "use strict";
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll(".needs-validation");
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach((form) => {
+          form.addEventListener(
+            "submit",
+            (event) => {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
+
+        <%- include('./partials/scripts') %>
+    </body>
+</html>

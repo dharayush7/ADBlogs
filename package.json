@@ -1,0 +1,19 @@
+{
+  "name": "adblogs",
+  "version": "1.0.0",
+  "description": "It is blog website",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Ayush Dhar",
+  "license": "https://license.ayushdhar.com/D2K1vC8ge",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.4.3",
+    "multer": "^1.4.5-lts.1"
+  }
+}
